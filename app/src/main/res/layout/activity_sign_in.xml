@@ -7,7 +7,7 @@
     tools:context=".SignIn">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txt_signin_title"
         android:textSize="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,18 +20,18 @@
         tools:layout_editor_absoluteY="42dp" />
 
     <EditText
-        android:id="@+id/editText5"
-        android:hint="password"
+        android:id="@+id/edt_signin_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_marginTop="213dp"
+        android:layout_alignStart="@+id/txt_signin_title"
+        android:layout_marginTop="209dp"
         android:ems="10"
+        android:hint="password"
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_signin_signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -41,13 +41,13 @@
         android:text="Sign-In" />
 
     <EditText
-        android:id="@+id/editText"
-        android:hint="email"
+        android:id="@+id/edt_signin_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_marginTop="128dp"
+        android:layout_alignStart="@+id/txt_signin_title"
+        android:layout_marginTop="125dp"
         android:ems="10"
+        android:hint="email"
         android:inputType="textEmailAddress" />
 </RelativeLayout>
