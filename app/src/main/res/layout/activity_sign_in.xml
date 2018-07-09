@@ -20,17 +20,6 @@
         tools:layout_editor_absoluteY="42dp" />
 
     <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_marginTop="132dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Name" />
-
-    <EditText
         android:id="@+id/editText5"
         android:hint="password"
         android:layout_width="wrap_content"
@@ -50,4 +39,15 @@
         android:layout_marginBottom="97dp"
         android:layout_marginStart="110dp"
         android:text="Sign-In" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:hint="email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginTop="128dp"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
 </RelativeLayout>
