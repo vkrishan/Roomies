@@ -49,7 +49,6 @@ public class SignIn extends AppCompatActivity {
             }
         });
 
-
     }
 
     private void signInAccount(String email, String password){
