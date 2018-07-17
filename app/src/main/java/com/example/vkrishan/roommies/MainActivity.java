@@ -3,12 +3,9 @@ package com.example.vkrishan.roommies;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TableLayout;
-import android.widget.Toolbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import com.google.firebase.analytics.FirebaseAnalytics;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -21,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tablayout;
     private ViewPager viewPager;
     private FirebaseAuth mAuth;
-
-
 
 
     @Override
@@ -41,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter vpa = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(vpa);
 
-        tablayout = (TabLayout) findViewById(R.id.tabs);
+        tablayout = (TabLayout) findViewById(R.id.main_tabs);
         tablayout.setupWithViewPager(viewPager);
 
     }

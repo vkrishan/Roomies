@@ -61,6 +61,7 @@ public class SignIn extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
 
                             Intent mainIntent = new Intent(SignIn.this, MainActivity.class);
+                            mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(mainIntent);
                             finish();
 
