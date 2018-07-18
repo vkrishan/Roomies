@@ -6,30 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".CreateAccount">
 
+    <include layout="@layout/app_bar_layout" android:id="@+id/createAccount_toolbar"/>
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="64dp"
         android:text="Create Account"
         android:textSize="25dp"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="28dp"
         tools:layout_editor_absoluteY="52dp" />
-
-    <EditText
-        android:id="@+id/edt_CreateAccount_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/edt_CreateAccount_userName"
-        android:layout_marginTop="181dp"
-        android:ems="10"
-        android:hint="email"
-        android:inputType="textEmailAddress"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="127dp" />
 
     <EditText
         android:id="@+id/edt_CreateAccount_userName"
@@ -37,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/btn_CreateAccount_signup"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="93dp"
+        android:layout_marginTop="150dp"
         android:ems="10"
         android:hint="username"
         android:inputType="textPersonName"
@@ -45,17 +36,39 @@
         tools:layout_editor_absoluteY="210dp" />
 
     <EditText
+        android:id="@+id/edt_CreateAccount_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btn_CreateAccount_signup"
+        android:layout_below="@+id/edt_CreateAccount_userName"
+        android:ems="10"
+        android:hint="email"
+        android:inputType="textEmailAddress" />
+
+
+
+    <EditText
         android:id="@+id/edt_CreateAccount_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/edt_CreateAccount_email"
-        android:layout_marginBottom="244dp"
+        android:layout_below="@id/edt_CreateAccount_email"
         android:ems="10"
         android:hint="password"
         android:inputType="textPassword"
         tools:layout_editor_absoluteX="33dp"
         tools:layout_editor_absoluteY="290dp" />
+
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btn_CreateAccount_signup"
+
+        />
 
     <Button
         android:id="@+id/btn_CreateAccount_signup"
