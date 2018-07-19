@@ -18,7 +18,11 @@
         </activity>
         <activity android:name=".Welcome" />
         <activity android:name=".CreateAccount" />
-        <activity android:name=".SignIn"></activity>
+        <activity android:name=".SignIn" />
+        <activity
+            android:name=".ProfileSetting"
+            android:label="@string/title_activity_profile_setting"
+            android:theme="@style/NoActionBarTheme"></activity>
     </application>
 
 </manifest>

@@ -73,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
          super.onOptionsItemSelected(item);
 
+        if(item.getItemId()== R.id.btn_profile_setting){
+            Intent i = new Intent(MainActivity.this, ProfileSetting.class);
+            startActivity(i);
+
+        }
+
          if(item.getItemId()== R.id.btn_logout){
              FirebaseAuth.getInstance().signOut();
              sendToLoginPage();

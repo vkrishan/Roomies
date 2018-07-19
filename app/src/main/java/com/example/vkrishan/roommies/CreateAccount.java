@@ -14,6 +14,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class CreateAccount extends AppCompatActivity {
 
@@ -24,6 +30,7 @@ public class CreateAccount extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private android.support.v7.widget.Toolbar mtoolbar;
     private ProgressBar mProgressBar;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +56,7 @@ public class CreateAccount extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String mUsername_str = mUsername.getText().toString();
+                final String mUsername_str = mUsername.getText().toString();
                 String mEmail_str = mEmail.getText().toString();
                 String mPassword_str = mPassword.getText().toString();
 
@@ -69,7 +76,7 @@ public class CreateAccount extends AppCompatActivity {
 
     }
     // Firebase default...
-    private void registerAccount(String user, String email, String pass) {
+    private void registerAccount(final String user, String email, String pass) {
 
 
         mProgressBar.setVisibility(View.VISIBLE);
@@ -79,6 +86,24 @@ public class CreateAccount extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+
+                            FirebaseUser fire_user = FirebaseAuth.getInstance().getCurrentUser();
+                            String uid = fire_user.getUid();    // This is the key for database
+
+                            // Call DB
+                            mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid); //This points to the root directory in Firebase Database
+
+                            HashMap<String, String> hm = new HashMap<>();
+                            hm.put("name", user);
+                            hm.put("status", "Hi there, I am using Roomies");
+                            hm.put("image", "default");
+                            hm.put("thumb_image", "default");
+
+                            mDatabase.setValue(hm);
+
+
+
+                            // continue after DB write.
                             mProgressBar.setVisibility(View.GONE);
                             Intent mainIntent = new Intent(CreateAccount.this, MainActivity.class);
                             startActivity(mainIntent);
